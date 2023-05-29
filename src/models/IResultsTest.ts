@@ -5,6 +5,3 @@ export interface IResultsTest {
     minutes_pass: number,
     seconds_pass: number,
 }
-export interface IResultsTestData{
-    results: IResultsTest[];
-}

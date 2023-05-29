@@ -1,29 +1,27 @@
 import React, { useEffect, useState } from "react";
-
 import Timer from "../components/testPage/Timer";
 import QOneAnswer from "../components/testPage/QOneAnswer";
 import useFetchData from "../hooks/useFetchData";
 import QInputAnswer from "../components/testPage/QInputAnswer";
-import QComparisonQuestions from "../components/testPage/QComparisonQuestions";
 import { Link, useParams } from "react-router-dom";
-import HeaderLoader from "../components/UI/loaders/HeaderLoader";
 import MainLoader from "../components/UI/loaders/MainLoader";
-import { useSpring, animated } from "react-spring";
-import { useDispatch, useSelector } from "react-redux";
+import { useSpring, animated } from "@react-spring/web";
 import QInputBetweenAnswer from "../components/testPage/QInputBetweenAnswer";
-import { setStudent_examId } from "../components/redux/reducers/testPageReduсer";
+import {useAppDispatch, useAppSelector} from "../hooks/hooks";
+import {setStudent_examId} from "../redux/reducers/FormPageSlice";
+import {ITestPage} from "../models/ITestPage";
 
-const TestPage = () => {
-    const { uuid } = useParams();
-    const dispatch = useDispatch();
+const TestPage: React.FC = () => {
+    const { uuid  } = useParams();
+    const dispatch = useAppDispatch();
 
-    const data  = useFetchData(
+    const data: ITestPage[]  = useFetchData(
         `http://165.232.118.51:8000/edu_exams/exams/exams/${uuid}`
     );
 
     const [loading, setLoading] = useState(true);
 
-    const { id, student_examId } = useSelector((state) => state.formPage);
+    const { id, student_examId } = useAppSelector((state) => state.formPage);
 
     const fadeIn = useSpring({
         from: { opacity: 0 },
@@ -40,9 +38,11 @@ const TestPage = () => {
     useEffect(() => {
         if (data) {
             setLoading(false);
+            dispatch(setStudent_examId(data[0].name));
         }
     }, [data]);
-    dispatch(setStudent_examId(data.name));
+
+
     return (
         <div>
             {loading ? (
@@ -50,10 +50,15 @@ const TestPage = () => {
             ) : (
                 <animated.div style={fadeIn}>
                     <header>
-                        <h1>{data.name}</h1>
+                        <h1>{data && data.map((item: ITestPage)=> (
+                            item.name
+                        )) }</h1>
                         <div className="timer">
                             <div className="timer">
-                                {data && /\d/.test(data.hours_to_pass) && <Timer data={data} />}
+                                {data &&
+                                    data.map((item) => (
+                                              <Timer data={item}/>
+                                    ))}
                             </div>
                         </div>
                     </header>
@@ -65,16 +70,13 @@ const TestPage = () => {
                 <>
                     <animated.div style={fadeIn}>
                         <main>
-                            <QComparisonQuestions
-                                exam={student_examId.uuid}
-                            ></QComparisonQuestions>
-                            <QOneAnswer exam={student_examId.uuid}></QOneAnswer>
-                            <QInputAnswer exam={student_examId.uuid}></QInputAnswer>
+                            <QOneAnswer exam={student_examId}></QOneAnswer>
+                            <QInputAnswer exam={student_examId}></QInputAnswer>
                             <QInputBetweenAnswer
-                                exam={student_examId.uuid}
+                                exam={student_examId}
                             ></QInputBetweenAnswer>
                             <animated.div style={fadeBTN}>
-                                <Link to={`/results_test/${data.uuid}`} replace={true}>
+                                <Link to={`/results_test/${data[0].uuid}`} replace={true}>
                                     <button className="CloseTest">
                                         <span>Завершить тест</span>
                                     </button>
