@@ -2,28 +2,18 @@ import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import {
   setHoursToPass,
-  setInitialDataLoaded,
   setMinutesToPass,
   setSecondsToPass,
 } from "../../redux/reducers/TimerSlice";
 import { useAppDispatch, useAppSelector } from "../../hooks/hooks";
-import { ITimer } from "../../models/ITimer";
 
-const Timer: React.FC<ITimer> = ({ data }) => {
+const Timer: React.FC = () => {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
+  const { student_examId } = useAppSelector((state) => state.formPage);
 
   const { hoursToPass, minutesToPass, secondsToPass, initialDataLoaded } =
     useAppSelector((state) => state.timer);
-
-  useEffect(() => {
-    if (data && !initialDataLoaded) {
-      dispatch(setHoursToPass(data.hours_to_pass));
-      dispatch(setMinutesToPass(data.minutes_to_pass));
-      dispatch(setSecondsToPass(data.seconds_to_pass));
-      dispatch(setInitialDataLoaded(!initialDataLoaded));
-    }
-  }, [data, dispatch, initialDataLoaded]);
 
   useEffect(() => {
     const timer =
@@ -48,17 +38,12 @@ const Timer: React.FC<ITimer> = ({ data }) => {
           }, 1000)
         : undefined;
 
-    if (
-      hoursToPass === 0 &&
-      minutesToPass === 0 &&
-      secondsToPass === 1 &&
-      data
-    ) {
-      navigate(`/results_test/${data.uuid}`, { replace: true });
+    if (hoursToPass === 0 && minutesToPass === 0 && secondsToPass === 1) {
+      navigate(`/results_test/${student_examId}`, { replace: true });
     }
 
     return () => clearTimeout(timer);
-  }, [hoursToPass, minutesToPass, secondsToPass, data, dispatch, navigate]);
+  }, [hoursToPass, minutesToPass, secondsToPass, dispatch, navigate]);
 
   const formattedTime = `${(hoursToPass || 0).toString().padStart(2, "0")}:${(
     minutesToPass || 0

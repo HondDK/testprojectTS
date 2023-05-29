@@ -5,9 +5,14 @@ import Timer from "../components/testPage/Timer";
 import QOneAnswer from "../components/testPage/QOneAnswer";
 import QInputAnswer from "../components/testPage/QInputAnswer";
 import QInputBetweenAnswer from "../components/testPage/QInputBetweenAnswer";
-import { useAppDispatch } from "../hooks/hooks";
-import { setStudent_examId } from "../redux/reducers/FormPageSlice";
 import useFetchData from "../hooks/useFetchData";
+import {
+  setHoursToPass,
+  setInitialDataLoaded,
+  setMinutesToPass,
+  setSecondsToPass,
+} from "../redux/reducers/TimerSlice";
+import { useAppDispatch, useAppSelector } from "../hooks/hooks";
 
 const TestPage: React.FC = () => {
   const { uuid } = useParams();
@@ -15,6 +20,16 @@ const TestPage: React.FC = () => {
   const { data, isLoading, error } = useFetchData(
     `http://165.232.118.51:8000/edu_exams/exams/exams/${uuid}`
   );
+  const { initialDataLoaded } = useAppSelector((state) => state.timer);
+  useEffect(() => {
+    if (data && !initialDataLoaded) {
+      dispatch(setHoursToPass(data.hours_to_pass));
+      dispatch(setMinutesToPass(data.minutes_to_pass));
+      dispatch(setSecondsToPass(data.seconds_to_pass));
+      dispatch(setInitialDataLoaded(true));
+    }
+  }, [data, dispatch]);
+
   const fadeIn = useSpring({
     from: { opacity: 0 },
     to: { opacity: 1 },
@@ -27,12 +42,6 @@ const TestPage: React.FC = () => {
     config: { duration: 5000 },
   });
 
-  useEffect(() => {
-    if (data) {
-      //dispatch(setStudent_examId(data.name));
-    }
-  }, [data]);
-
   if (isLoading) {
     return <div>Загрузка...</div>;
   }
@@ -40,19 +49,14 @@ const TestPage: React.FC = () => {
   if (error) {
     return <div>Произошла ошибка: {error}</div>;
   }
-  const timerData = data || {
-    hours_to_pass: 0,
-    minutes_to_pass: 0,
-    seconds_to_pass: 0,
-    uuid: "",
-  };
+
   return (
     <div>
       <animated.div style={fadeIn}>
         <header>
           {data && <h1>{data.name}</h1>}
           <div className="timer">
-            <Timer data={timerData} />
+            <Timer />
           </div>
         </header>
       </animated.div>

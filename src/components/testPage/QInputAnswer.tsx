@@ -3,12 +3,11 @@ import axios from "axios";
 import useFetchData from "../../hooks/useFetchData";
 import { useParams } from "react-router-dom";
 import {
-  setAnswerId,
   setAnswer,
+  setAnswerId,
   setButtonDisabled,
 } from "../../redux/reducers/QInputAnswerSlice";
 import { useAppDispatch, useAppSelector } from "../../hooks/hooks";
-import { IQInputAnswer } from "../../models/IQInputAnswer";
 
 const QInputAnswer: React.FC = () => {
   const { uuid } = useParams<{ uuid: string }>();

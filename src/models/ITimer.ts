@@ -4,5 +4,5 @@ export interface ITimer {
     minutes_to_pass: number;
     seconds_to_pass: number;
     uuid: string;
-  };
+  }[];
 }
