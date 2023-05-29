@@ -1,11 +1,21 @@
-import React from "react";
+import React, { CSSProperties } from "react";
 
-const QOneAnswerButton = (props) => {
-    return (
-        <div style={props.style} onClick={props.onClick}>
-            <span>{props.text}</span>
-        </div>
-    );
+interface QOneAnswerButtonProps {
+  style: CSSProperties;
+  text: string;
+  onClick: () => void;
+}
+
+const QOneAnswerButton: React.FC<QOneAnswerButtonProps> = ({
+  style,
+  text,
+  onClick,
+}) => {
+  return (
+    <div style={style} onClick={onClick}>
+      <span>{text}</span>
+    </div>
+  );
 };
 
 export default QOneAnswerButton;

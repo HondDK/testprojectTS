@@ -1,22 +1,36 @@
-import { useState, useEffect } from "react";
-import axios from "axios";
+import { useEffect, useState } from "react";
+import type { IApiResponse } from "../models/IApiResponse";
 
-function useFetchData<T>(url: string): T[] {
-    const [data, setData] = useState<T[]>([]);
+const useFetchData = (url: string) => {
+  const [data, setData] = useState<IApiResponse | null>(null);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [error, setError] = useState<string | null>(null);
 
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const result = await axios.get<T[]>(url);
-                setData(result.data);
-            } catch (error) {
-                console.error(error);
-            }
-        };
-        fetchData();
-    }, [url]);
+  useEffect(() => {
+    const fetchData = async () => {
+      setIsLoading(true);
+      try {
+        const response = await fetch(url);
+        if (!response.ok) {
+          throw new Error("Ошибка получения данных");
+        }
+        const jsonData: IApiResponse = await response.json();
+        setData(jsonData);
+      } catch (err) {
+        if (err instanceof Error) {
+          setError(err.message);
+        } else {
+          setError("Произошла неизвестная ошибка");
+        }
+      } finally {
+        setIsLoading(false);
+      }
+    };
 
-    return data;
-}
+    fetchData();
+  }, [url]);
+
+  return { data, isLoading, error };
+};
 
 export default useFetchData;
