@@ -26,7 +26,7 @@ const QInputAnswer: React.FC = () => {
     const article = {
       student_exam: student_examId,
       question: question.uuid,
-      text: answer,
+      text: answer[index],
     };
     axios
       .post(
@@ -54,8 +54,12 @@ const QInputAnswer: React.FC = () => {
             <span className="description">{item.description}</span>
             <div className="q_input_answer_block">
               <input
-                onChange={(e) => dispatch(setAnswer(e.target.value))}
-                value={answer[answerId]}
+                onChange={(e) =>
+                  dispatch(
+                    setAnswer({ answerId: index, answer: e.target.value })
+                  )
+                }
+                value={answer[index] || ""}
               />
               <button
                 disabled={buttonDisabled[index]}

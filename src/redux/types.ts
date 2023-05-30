@@ -24,10 +24,11 @@ export interface IQOneAnswerState {
 }
 
 export interface IQInputAnswerState {
-  answerId: number;
-  answer: string;
+  answerId: string;
+  answer: string[];
   buttonDisabled: boolean[];
 }
+export interface IQInputBetweenAnswerState extends IQInputAnswerState {}
 
 export interface RootState {
   formPage: IFormPageState;
@@ -35,5 +36,5 @@ export interface RootState {
   timer: ITimerState;
   qOneAnswer: IQOneAnswerState;
   qInputAnswer: IQInputAnswerState;
+  qInputBetweenAnswer: IQInputBetweenAnswerState;
 }
-

@@ -7,28 +7,26 @@ import {
   setAnswer,
   setAnswerId,
   setButtonDisabled,
-} from "../../redux/reducers/QInputAnswerSlice";
+} from "../../redux/reducers/QInputAnswerBetweenSlice";
 import { useAppDispatch, useAppSelector } from "../../hooks/hooks";
-import { IQInputAnswerBetween } from "../../models/IQInputAnswerBetween";
 
 const QInputBetweenAnswer: React.FC = () => {
   const dispatch = useAppDispatch();
   const { uuid } = useParams<string>();
   const { answerId, answer, buttonDisabled } = useAppSelector(
-    (state) => state.qInputAnswer
+    (state) => state.qInputBetweenAnswer
   );
   const { student_examId } = useAppSelector((state) => state.formPage);
 
-  const { data, isLoading, error } = useFetchData(
+  const { data } = useFetchData(
     `http://165.232.118.51:8000/edu_exams/exams/exams/${uuid}`
   );
 
   function submit(index: number, question: any) {
-    console.log(question.uuid);
     const article = {
       student_exam: student_examId,
       question: question.uuid,
-      text: answer,
+      text: answer[index] || "",
     };
     axios
       .post(
@@ -59,8 +57,12 @@ const QInputBetweenAnswer: React.FC = () => {
                 <>
                   <span className="text">{items.text}</span>
                   <input
-                    onChange={(e) => dispatch(setAnswer(e.target.value))}
-                    value={answer[answerId]}
+                    onChange={(e) =>
+                      dispatch(
+                        setAnswer({ answerId: index, answer: e.target.value })
+                      )
+                    }
+                    value={answer[index] || ""}
                   />
                   <span className="text">{items.text_end}</span>
                   <button

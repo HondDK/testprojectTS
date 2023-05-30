@@ -3,7 +3,6 @@ import { NavLink, useParams } from "react-router-dom";
 import axios from "axios";
 import { useAppDispatch, useAppSelector } from "../hooks/hooks";
 import {
-  setId,
   setIsDisabled,
   setStudent_examId,
   setUser,
@@ -13,9 +12,7 @@ const FormPage: React.FC = () => {
   const { uuid } = useParams<{ uuid: string }>(); // retrieve the UUID from the URL
   const dispatch = useAppDispatch();
 
-  const { user, isDisabled, student_examId } = useAppSelector(
-    (state) => state.formPage
-  );
+  const { user, isDisabled } = useAppSelector((state) => state.formPage);
 
   useEffect(() => {
     localStorage.clear();
@@ -43,7 +40,7 @@ const FormPage: React.FC = () => {
   function startTest() {
     const article = {
       user_name: user,
-      exam: student_examId,
+      exam: uuid,
     };
 
     axios
@@ -52,9 +49,8 @@ const FormPage: React.FC = () => {
         article
       )
       .then((response) => {
-        dispatch(setId(response.data.uuid));
-        dispatch(setStudent_examId(response.data.exam));
-        //setLoading(false);
+        dispatch(setStudent_examId(response.data.uuid));
+        console.log(response.data.exam);
       })
       .catch((error) => {
         console.error(error);

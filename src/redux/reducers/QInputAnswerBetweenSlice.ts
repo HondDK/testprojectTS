@@ -1,14 +1,14 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { IQInputAnswerState } from "../types";
+import { IQInputBetweenAnswerState } from "../types";
 
-const initialState: IQInputAnswerState = {
+const initialState: IQInputBetweenAnswerState = {
   answerId: "",
   answer: [],
   buttonDisabled: [],
 };
 
-const QInputAnswerSlice = createSlice({
-  name: "QInputAnswerSlice",
+const QInputAnswerBetweenSlice = createSlice({
+  name: "QInputAnswerBetween",
   initialState,
   reducers: {
     setAnswerId: (state, action: PayloadAction<string>) => {
@@ -28,5 +28,5 @@ const QInputAnswerSlice = createSlice({
 });
 
 export const { setAnswerId, setAnswer, setButtonDisabled } =
-  QInputAnswerSlice.actions;
-export default QInputAnswerSlice.reducer;
+  QInputAnswerBetweenSlice.actions;
+export default QInputAnswerBetweenSlice.reducer;
