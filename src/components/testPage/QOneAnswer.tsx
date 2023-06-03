@@ -67,7 +67,6 @@ const QOneAnswer: React.FC = () => {
 
   useEffect(() => {
     if (data && data.ordinary_questions && data.ordinary_questions.length > 0) {
-      // Перемешиваем ответы только при первом рендере
       const shuffled = data.ordinary_questions.map((question: any) =>
         shuffleAnswers([...question.answers])
       );

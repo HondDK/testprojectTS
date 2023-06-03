@@ -10,6 +10,12 @@ export interface IApiResponse {
   description: string;
   subject: string;
   school: string;
+  points: number;
+  max_points: number;
+  hours_pass: number;
+  minutes_pass: number;
+  seconds_pass: number;
+
   items: IExam[];
   original_questions: IExam[];
   results: IExam[];

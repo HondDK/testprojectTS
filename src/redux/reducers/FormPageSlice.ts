@@ -4,7 +4,11 @@ import { IFormPageState } from "../types";
 const initialState: IFormPageState = {
   student_examId: "",
   id: "",
-  user: "",
+  user: {
+    lastName: "",
+    firstName: "",
+    middleName: "",
+  },
   isDisabled: false,
 };
 
@@ -18,7 +22,7 @@ const formPageSlice = createSlice({
     setId: (state, action: PayloadAction<string>) => {
       state.id = action.payload;
     },
-    setUser: (state, action: PayloadAction<string>) => {
+    setUser: (state, action: PayloadAction<IFormPageState["user"]>) => {
       state.user = action.payload;
     },
     setIsDisabled: (state, action: PayloadAction<boolean>) => {

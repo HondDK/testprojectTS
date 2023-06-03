@@ -11,33 +11,23 @@ const ResultsTest = () => {
   const { data, isLoading, error } = useFetchData(
     `http://165.232.118.51:8000/edu_exams/exams/student_exams/${student_examId}/results`
   );
-  if (isLoading) {
-    return <div>Загрузка...</div>;
-  }
-
-  if (error) {
-    return <div>Произошла ошибка: {error}</div>;
-  }
-
-  if (!data || data.results.length === 0) {
-    return <div>Нет доступных тестов</div>;
-  }
 
   return (
     <>
       <h1>Результаты теста по {ex_name}</h1>
       <main className="test_results">
-        <h1>{user}</h1>
-        {data.results.map((item: IExam) => (
-          <div key={item.id}>
-            <p>Набранные баллы: {item.points}</p>
-            <p>Максимально возможное количество баллов: {item.max_points}</p>
+        <h1>{(user.middleName, user.lastName, user.firstName)}</h1>
+
+        {data && (
+          <div key={data.id}>
+            <p>Набранные баллы: {data.points}</p>
+            <p>Максимально возможное количество баллов: {data.max_points}</p>
             <p>
-              Остаток времени: {item.hours_pass}:{item.minutes_pass}:
-              {item.seconds_pass}
+              Остаток времени: {data.hours_pass}:{data.minutes_pass}:
+              {data.seconds_pass}
             </p>
           </div>
-        ))}
+        )}
       </main>
     </>
   );

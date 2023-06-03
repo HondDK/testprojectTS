@@ -13,6 +13,7 @@ import {
   setSecondsToPass,
 } from "../redux/reducers/TimerSlice";
 import { useAppDispatch, useAppSelector } from "../hooks/hooks";
+import { setEx_name } from "../redux/reducers/TestPageSlice";
 
 const TestPage: React.FC = () => {
   const { uuid } = useParams();
@@ -27,6 +28,7 @@ const TestPage: React.FC = () => {
       dispatch(setMinutesToPass(data.minutes_to_pass));
       dispatch(setSecondsToPass(data.seconds_to_pass));
       dispatch(setInitialDataLoaded(true));
+      dispatch(setEx_name(data.name));
     }
   }, [data, dispatch]);
 
@@ -43,7 +45,7 @@ const TestPage: React.FC = () => {
   });
 
   if (isLoading) {
-    return <div>Загрузка...</div>;
+    return <div className="custom-loader"></div>;
   }
 
   if (error) {

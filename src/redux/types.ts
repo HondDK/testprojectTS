@@ -1,7 +1,7 @@
 export interface IFormPageState {
   student_examId: string;
   id: string;
-  user: string;
+  user: { lastName: string; firstName: string; middleName: string };
   isDisabled: boolean;
 }
 

@@ -14,7 +14,7 @@ const MainPage: React.FC = () => {
   }, [data]);
 
   if (isLoading) {
-    return <div>Загрузка...</div>;
+    return <div className="custom-loader"></div>;
   }
 
   if (error) {
@@ -27,7 +27,7 @@ const MainPage: React.FC = () => {
 
   return (
     <div>
-      <h1>Все созданные тесты {data.results.length}</h1>
+      <h1>Доступные к прохождению тесты: {data.results.length}</h1>
       <main>
         <div className="main_card_test">
           {data.results.map((item: IExam) => (

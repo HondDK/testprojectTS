@@ -19,9 +19,10 @@ const FormPage: React.FC = () => {
   }, []);
 
   function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
-    const name = e.target.value;
-    dispatch(setUser(name));
-    if (name.trim() === "") {
+    const { name, value } = e.target;
+    dispatch(setUser({ ...user, [name]: value }));
+
+    if (value.trim() === "") {
       dispatch(setIsDisabled(true));
     } else {
       dispatch(setIsDisabled(false));
@@ -30,7 +31,11 @@ const FormPage: React.FC = () => {
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    if (user.trim() === "") {
+    if (
+      user.lastName.trim() === "" ||
+      user.firstName.trim() === "" ||
+      user.middleName.trim() === ""
+    ) {
       alert("Введите фамилию, имя и отчество");
       return;
     }
@@ -39,7 +44,7 @@ const FormPage: React.FC = () => {
 
   function startTest() {
     const article = {
-      user_name: user,
+      user_name: `${user.lastName} ${user.firstName} ${user.middleName}`,
       exam: uuid,
     };
 
@@ -60,20 +65,38 @@ const FormPage: React.FC = () => {
   return (
     <>
       <header className="header_form">
-        <h1>Заполните поле перед началом тестирования</h1>
+        <h1>Заполните поля перед началом тестирования</h1>
       </header>
       <main className="form_page">
         <article>
           <form onSubmit={handleSubmit}>
-            <label htmlFor="POST-name">Введите фамилию, имя и отчество</label>
+            <label htmlFor="POST-lastName">Введите фамилию</label>
             <input
-              id="POST-name"
+              id="POST-lastName"
               type="text"
-              name="name"
-              value={user}
+              name="lastName"
+              placeholder="Фамилия"
+              value={user.lastName}
               onChange={handleChange}
             ></input>
-
+            <label htmlFor="POST-firstName">Введите имя</label>
+            <input
+              id="POST-firstName"
+              type="text"
+              name="firstName"
+              placeholder="Имя"
+              value={user.firstName}
+              onChange={handleChange}
+            ></input>
+            <label htmlFor="POST-middleName">Введите отчество</label>
+            <input
+              id="POST-middleName"
+              type="text"
+              placeholder="Отчество"
+              name="middleName"
+              value={user.middleName}
+              onChange={handleChange}
+            ></input>
             <NavLink to={isDisabled ? "#" : `/test_page/${uuid}`}>
               <button
                 className="submit"

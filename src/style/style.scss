@@ -300,30 +300,34 @@ h1 {
 }
 .main_card_test {
   margin-top: 30px;
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  grid-column-gap: 25px;
-  grid-row-gap: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   div {
     align-items: center;
     text-align: center;
-    margin-right: 15px;
-    background: rgba(89, 173, 103, 0.7);
+    margin-top: 15px;
+    background: rgba(255, 255, 255, 1);
     cursor: pointer;
     border-radius: 15px;
     padding: 20px;
-    width: 300px;
+    width: 50%;
+    border: 0.0625rem solid #dadce0;
+    box-shadow: 0px 0px 25px 5px rgba(0, 0, 0, 0.14);
+    border-radius: 0.5rem;
+    overflow: hidden;
   }
+
   :hover {
     -webkit-transform: scale(1.02);
     -ms-ransform: scale(1.02);
     transform: scale(1.02);
     transition: transform 0.2s ease;
   }
+
   @extend %font-bold;
-  color: white;
+  color: black;
   font-size: 16px;
 }
 .header_form {
@@ -366,6 +370,7 @@ form {
     cursor: pointer;
     color: rgb(255, 255, 255);
   }
+
   :hover {
     -webkit-transform: scale(1.02);
     -ms-ransform: scale(1.02);
@@ -373,40 +378,45 @@ form {
     transition: transform 0.2s ease;
   }
 }
+
 .custom-loader {
   margin: 0 auto;
-  --r1: 154%;
-  --r2: 68.5%;
-  width: 120px;
-  height: 120px;
+
+  width: 100px;
+  height: 100px;
+  display: grid;
+  border: 8px solid #0000;
   border-radius: 50%;
-  background: radial-gradient(
-                  var(--r1) var(--r2) at top,
-                  #0000 79.5%,
-                  #59ad67 80%
-  ),
-  radial-gradient(var(--r1) var(--r2) at bottom, #59ad67 79.5%, #0000 80%),
-  radial-gradient(var(--r1) var(--r2) at top, #0000 79.5%, #59ad67 80%),
-  #ffffff;
-  background-size: 50.5% 220%;
-  background-position: -100% 0%, 0% 0%, 100% 0%;
-  background-repeat: no-repeat;
-  animation: p9 2s infinite linear;
+  border-color: #59AD67 #0000;
+  animation: s6 1s infinite linear;
 }
 
+.custom-loader::before,
+.custom-loader::after {
+  content: "";
+  grid-area: 1/1;
+  margin: 4px;
+  border: inherit;
+  border-radius: 50%;
+}
 
+.custom-loader::before {
+  border-color: #59AD67 #0000;
+  animation: inherit;
+  animation-duration: .5s;
+  animation-direction: reverse;
+}
 
-@keyframes p9 {
-  33% {
-    background-position: 0% 33%, 100% 33%, 200% 33%;
-  }
-  66% {
-    background-position: -100% 66%, 0% 66%, 100% 66%;
-  }
+.custom-loader::after {
+  margin: 16px;
+}
+
+@keyframes s6 {
   100% {
-    background-position: 0% 100%, 100% 100%, 200% 100%;
+    transform: rotate(1turn)
   }
 }
+
 
 .test_results {
   @extend %font-bold;
@@ -418,19 +428,35 @@ form {
   background-color: #fff;
   border: 0.0625rem solid #dadce0;
   box-shadow: 0px 0px 25px 5px rgba(0, 0, 0, 0.14);
-  border-radius: 0.5rem;
+  border-radius: 2rem;
   overflow: hidden;
+
 }
 .form_page {
   @extend %font-bold;
-  background-color: white;
-  font-size: 24px;
-  width: 37%;
 
-  padding: 25px;
-  background-color: #fff;
-  border: 0.0625rem solid #dadce0;
-  box-shadow: 0px 0px 25px 5px rgba(0, 0, 0, 0.14);
-  border-radius: 0.5rem;
-  overflow: hidden;
+  font-size: 24px;
+
+  form {
+    width: 700px;
+
+    padding: 50px;
+    background-color: #fff;
+    border: 0.0625rem solid #dadce0;
+    box-shadow: 0px 0px 25px 5px rgba(0, 0, 0, 0.14);
+    border-radius: 2rem;
+    overflow: hidden;
+
+  }
+
+  input {
+    color: white;
+    outline: none;
+    margin-top: 15px;
+    width: 100% s;
+  }
+
+  ::placeholder {
+    color: white
+  }
 }
