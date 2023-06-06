@@ -89,7 +89,24 @@ main {
   flex-direction: column;
   margin: 25px auto;
   padding-top: 20px;
+ .main_card_test{
+   margin: 0 auto;
+   width: 50%;
+    div{
+      @extend %font-base;
+      font-size: 20px;
+      margin-top: 15px;
+      background-color: white;
+       text-align: center;
+      padding: 15px;
 
+      background-color: #fff;
+      border: 0.0625rem solid #dadce0;
+      border-radius: 0.5rem;
+      overflow: hidden;
+    }
+
+ }
   article {
     span {
       @extend %font-base;
