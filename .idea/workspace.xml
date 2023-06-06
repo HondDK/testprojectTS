@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="5f283494-9c5c-411b-995a-a7056744dec2" name="Changes" comment="add ts" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2QQe9Bw7rkxOcpYX9rP7oownWHy" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;docker-host&quot;,
+    &quot;js.last.introduce.type&quot;: &quot;CONST&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Danil/Documents/prog/testprojectObjTS/testprojts/public&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;C:\\Users\\Danil\\Documents\\prog\\testprojectObjTS\\testprojts\\node_modules\\prettier&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.prettier&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\Danil\\Documents\\prog\\testprojectObjTS\\testprojts\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="ReactDesignerToolWindowState">
+    <option name="myId2Visible">
+      <map>
+        <entry key="com.haulmont.rcb.reactComponents" value="false" />
+        <entry key="com.haulmont.rcb.reactInspector" value="false" />
+      </map>
+    </option>
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Danil\Documents\prog\testprojectObjTS\testprojts\public" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Danil\Documents\prog\testprojectObjTS\testprojts\src\models\PagesModels" />
+      <recent name="C:\Users\Danil\Documents\prog\testprojectObjTS\testprojts\src\hooks" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5f283494-9c5c-411b-995a-a7056744dec2" name="Changes" comment="" />
+      <created>1685290079270</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1685290079270</updated>
+      <workItem from="1685290083590" duration="11111000" />
+      <workItem from="1685344007448" duration="14396000" />
+      <workItem from="1685363871039" duration="8505000" />
+      <workItem from="1685426997672" duration="7484000" />
+      <workItem from="1685436857159" duration="221000" />
+      <workItem from="1685451423033" duration="2889000" />
+      <workItem from="1685461430722" duration="2256000" />
+      <workItem from="1685468059819" duration="408000" />
+      <workItem from="1685543789105" duration="480000" />
+      <workItem from="1685556981576" duration="1073000" />
+      <workItem from="1685640715233" duration="48000" />
+      <workItem from="1685785794232" duration="6589000" />
+      <workItem from="1686051081009" duration="1077000" />
+      <workItem from="1686054694990" duration="3981000" />
+      <workItem from="1686061508964" duration="2123000" />
+      <workItem from="1686071439687" duration="1021000" />
+    </task>
+    <task id="LOCAL-00001" summary="add ts">
+      <created>1685301374224</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1685301374225</updated>
+    </task>
+    <task id="LOCAL-00002" summary="add ts">
+      <created>1685346315697</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1685346315697</updated>
+    </task>
+    <task id="LOCAL-00003" summary="add ts">
+      <created>1685377225615</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1685377225615</updated>
+    </task>
+    <task id="LOCAL-00004" summary="add ts">
+      <created>1685378746355</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1685378746355</updated>
+    </task>
+    <task id="LOCAL-00005" summary="add ts">
+      <created>1685432532094</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1685432532094</updated>
+    </task>
+    <task id="LOCAL-00006" summary="add ts">
+      <created>1685787330255</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1685787330255</updated>
+    </task>
+    <task id="LOCAL-00007" summary="add ts">
+      <created>1686051543501</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1686051543501</updated>
+    </task>
+    <task id="LOCAL-00008" summary="add ts">
+      <created>1686059158718</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1686059158718</updated>
+    </task>
+    <task id="LOCAL-00009" summary="add ts">
+      <created>1686059218909</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1686059218909</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="docker-host" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="add ts" />
+    <option name="LAST_COMMIT_MESSAGE" value="add ts" />
+  </component>
+</project>
