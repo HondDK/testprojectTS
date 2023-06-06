@@ -19,7 +19,7 @@ const TestPage: React.FC = () => {
   const { uuid } = useParams();
   const dispatch = useAppDispatch();
   const { data, isLoading, error } = useFetchData(
-    `http://test_web:8000/edu_exams/exams/exams/${uuid}`
+    `http://206.189.61.25:8000/edu_exams/exams/exams/${uuid}`
   );
   const { initialDataLoaded } = useAppSelector((state) => state.timer);
   useEffect(() => {

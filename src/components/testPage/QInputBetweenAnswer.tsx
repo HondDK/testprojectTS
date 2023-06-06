@@ -19,7 +19,7 @@ const QInputBetweenAnswer: React.FC = () => {
   const { student_examId } = useAppSelector((state) => state.formPage);
 
   const { data } = useFetchData(
-    `http://test_web:8000/edu_exams/exams/exams/${uuid}`
+    `http://206.189.61.25:8000/edu_exams/exams/exams/${uuid}`
   );
 
   function submit(index: number, question: any) {
@@ -30,7 +30,7 @@ const QInputBetweenAnswer: React.FC = () => {
     };
     axios
       .post(
-        "http://test_web/edu_exams/exams/original_question_between_user_answers/",
+        "http://206.189.61.25:8000/edu_exams/exams/original_question_between_user_answers/",
         article
       )
       .then((response) => {
