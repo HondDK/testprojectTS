@@ -19,7 +19,7 @@ const QInputAnswer: React.FC = () => {
   );
 
   const { data, isLoading, error } = useFetchData(
-    `http://206.189.61.25:8000/edu_exams/exams/exams/${uuid}`
+    `http://test_web:8000/edu_exams/exams/exams/${uuid}`
   );
 
   function submit(index: number, question: any) {
@@ -30,7 +30,7 @@ const QInputAnswer: React.FC = () => {
     };
     axios
       .post(
-        "http://206.189.61.25:8000/edu_exams/exams/original_question_user_answers/",
+        "http://test_web:8000/edu_exams/exams/original_question_user_answers/",
         article
       )
       .then((response) => {

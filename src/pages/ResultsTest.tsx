@@ -9,7 +9,7 @@ const ResultsTest = () => {
   const { ex_name } = useAppSelector((state) => state.testPage);
 
   const { data, isLoading, error } = useFetchData(
-    `http://206.189.61.25:8000/edu_exams/exams/student_exams/${student_examId}/results`
+    `http://test_web:8000/edu_exams/exams/student_exams/${student_examId}/results`
   );
 
   return (
