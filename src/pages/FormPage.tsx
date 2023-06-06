@@ -49,10 +49,7 @@ const FormPage: React.FC = () => {
     };
 
     axios
-      .post(
-        "http://165.232.118.51:8000/edu_exams/exams/student_exams/",
-        article
-      )
+      .post("http://206.189.61.25:8000/edu_exams/exams/student_exams/", article)
       .then((response) => {
         dispatch(setStudent_examId(response.data.uuid));
         console.log(response.data.exam);

@@ -5,7 +5,7 @@ import { IExam } from "../models/IExam";
 
 const MainPage: React.FC = () => {
   const { data, isLoading, error } = useFetchData(
-    "http://165.232.118.51:8000/edu_exams/exams/exams/"
+    "http://206.189.61.25:8000/edu_exams/exams/exams/"
   );
 
   useEffect(() => {

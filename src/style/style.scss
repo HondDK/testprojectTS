@@ -3,14 +3,21 @@
 %font-bold {
   font-family: "Inter";
   font-style: normal;
+  font-weight: 700;
 }
+
 %font-base {
   font-family: "Arial";
   font-style: normal;
+  font-weight: 400;
 }
-input::-webkit-outer-spin-button {
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
   -webkit-appearance: none;
+  margin: 0;
 }
+
 body {
   background: url("../../public/blob-scene-haikei.svg");
   background-size: cover;
@@ -18,55 +25,59 @@ body {
 }
 
 input {
-  border-top-style: hidden;
-  border-right-style: hidden;
-  border-left-style: hidden;
+  border: none;
 }
+
 header {
   width: 1440px;
   display: flex;
-  top: 0;
-  margin: 0 auto;
   justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  padding: 20px 40px;
+
   h1 {
     @extend %font-bold;
-    font-weight: 700;
     font-size: 32px;
-    line-height: 39px;
-    margin-top: 45px;
+    line-height: 1.2;
+    margin-top: 0;
   }
 
   span {
     @extend %font-bold;
-    font-weight: 700;
     font-size: 50px;
-    line-height: 116px;
+    line-height: 1.2;
     position: fixed;
-    top: 15;
+    top: 15px;
     left: 70%;
-    width: 100%;
     z-index: 100;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 15px;
+    border-radius: 10px;
   }
+
   /* настройки для узких экранов */
   @media (max-width: 768px) {
+    margin: 0 auto;
+    flex-direction: column;
+    width: 70%;
     span {
-      position: static; /* сброс позиции для узких экранов */
-      background-color: #333; /* изменение цвета фона */
+      position: static;
+      background-color: #333;
     }
   }
+
   .timer-span {
     background-color: #fff;
-    border: 0.0625rem solid #dadce0;
-    border-radius: 0.5rem;
-    padding: 22px 25px 25px 25px;
+    border: 1px solid #dadce0;
+    border-radius: 10px;
+    padding: 15px;
     overflow: hidden;
     width: 225px;
-    box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.3),
-    0 2px 6px 2px rgba(60, 64, 67, 0.15);
-    height: 100px;
-    padding: 0 15px 15px 12px;
+    box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3), 0 2px 6px rgba(60, 64, 67, 0.15);
   }
 }
+
 a {
   color: inherit;
   text-decoration: none;
@@ -74,29 +85,34 @@ a {
 
 main {
   width: 1440px;
-  padding-top: auto;
   display: flex;
   flex-direction: column;
   margin: 25px auto;
+  padding-top: 20px;
+
   article {
     span {
       @extend %font-base;
-      font-weight: 400;
       font-size: 32px;
+      line-height: 1.2;
     }
+
     p {
       @extend %font-base;
-      font-weight: 400;
       font-size: 24px;
-      line-height: 28px;
+      line-height: 1.2;
       text-align: center;
     }
+
     .main_text {
-      width: 740px;
+      max-width: 740px;
+      margin: 0 auto;
     }
+
     h1 {
       @extend %font-bold;
       text-align: center;
+      margin: 0;
     }
   }
 
@@ -140,26 +156,91 @@ main {
           padding: 5px;
         }
       }
+
       :hover {
         -webkit-transform: scale(1.02);
         -ms-ransform: scale(1.02);
         transform: scale(1.02);
         transition: transform 0.2s ease;
       }
+
       .selected {
         background-color: #216463;
       }
     }
   }
-  .CloseTest {
-    display: flex;
-    @extend %font-bold;
-    width: 300px;
-    height: 70px;
-    margin-top: 50px;
-    margin-left: auto;
-    background: rgba(218, 51, 59, 0.8);
-    cursor: pointer;
+
+
+  /* настройки для узких экранов */
+  @media (max-width: 768px) {
+    width: 90%;
+
+    header{
+      h1{
+        display: none;
+      }
+    }
+    .q_one_answer {
+
+      p {
+        font-family: Inter;
+        font-weight: 300;
+        font-size: 15px;
+        line-height: 20px;
+      }
+      .q_one_answer_btn{
+      button {
+
+        span {
+          font-size: 15px;
+          padding: 3px;
+        }
+      }
+      }
+    }
+    .q_one_answer_btn {
+      flex-direction: column;
+    }
+    .q_input_answer{
+      font-size: 15px;
+      .q_between_input_answer_block{
+        flex-direction: column;
+
+        input{
+          width: 100%;
+        }
+        button{
+          width: 90%;
+          margin: 0 auto;
+        }
+      }
+    }
+    main {
+      section {
+        h1 {
+          font-size: 15px;
+        }
+
+        p {
+          font-size: 10px;
+        }
+      }
+    }
+    .CloseTest{
+      width: 100%;
+    }
+  }
+}
+
+.CloseTest {
+  display: flex;
+  @extend %font-bold;
+  width: 300px;
+  height: 70px;
+  margin-top: 50px;
+  margin-left: auto;
+  background: rgba(218, 51, 59, 0.8);
+  cursor: pointer;
     border-radius: 15px;
     border-style: none;
     align-items: center;
@@ -170,7 +251,7 @@ main {
       color: white;
     }
   }
-}
+
 
 .q_input_answer {
   background-color: #fff;
@@ -192,6 +273,7 @@ main {
       margin-left: 15px;
       margin-right: 15px;
     }
+
     input {
       @extend %font-bold;
       text-align: center;
@@ -201,6 +283,7 @@ main {
       width: 300px;
       color: white;
     }
+
     button {
       @extend %font-bold;
       margin-left: 5px;
@@ -213,25 +296,30 @@ main {
       color: white;
       cursor: pointer;
     }
+
     :hover {
       -webkit-transform: scale(1.02);
       -ms-ransform: scale(1.02);
       transform: scale(1.02);
       transition: transform 0.2s ease;
     }
+
     [disabled] {
       background-color: #216463;
     }
   }
+
   .q_input_answer_block {
     @extend %font-base;
 
     display: flex;
     flex-direction: row;
+
     span {
       margin-left: 15px;
       margin-right: 15px;
     }
+
     input {
       @extend %font-bold;
       text-align: center;
@@ -241,6 +329,7 @@ main {
       width: 300px;
       color: white;
     }
+
     button {
       @extend %font-bold;
       margin-left: 5px;
@@ -253,83 +342,25 @@ main {
       color: white;
       cursor: pointer;
     }
+
     :hover {
       -webkit-transform: scale(1.02);
       -ms-ransform: scale(1.02);
       transform: scale(1.02);
       transition: transform 0.2s ease;
     }
+
     [disabled] {
       background-color: #216463;
     }
   }
 }
-.card_comparison_questions {
-  display: flex;
 
-  div {
-    display: flex;
-    align-items: center;
-    text-align: center;
-    margin-right: 15px;
-    width: 178px;
-    height: 178px;
-    background: rgba(89, 173, 103, 0.8);
-    cursor: pointer;
-    border-radius: 15px;
-    //Текст
-    span {
-      @extend %font-base;
-      margin: 0 auto;
-      color: white;
-      font-weight: 400;
-      font-size: 24px;
-      line-height: 28px;
-    }
-  }
-  :hover {
-    -webkit-transform: scale(1.02);
-    -ms-ransform: scale(1.02);
-    transform: scale(1.02);
-    transition: transform 0.2s ease;
-  }
-}
 h1 {
   text-align: center;
   @extend %font-base;
 }
-.main_card_test {
-  margin-top: 30px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 
-  div {
-    align-items: center;
-    text-align: center;
-    margin-top: 15px;
-    background: rgba(255, 255, 255, 1);
-    cursor: pointer;
-    border-radius: 15px;
-    padding: 20px;
-    width: 50%;
-    border: 0.0625rem solid #dadce0;
-    box-shadow: 0px 0px 25px 5px rgba(0, 0, 0, 0.14);
-    border-radius: 0.5rem;
-    overflow: hidden;
-  }
-
-  :hover {
-    -webkit-transform: scale(1.02);
-    -ms-ransform: scale(1.02);
-    transform: scale(1.02);
-    transition: transform 0.2s ease;
-  }
-
-  @extend %font-bold;
-  color: black;
-  font-size: 16px;
-}
 .header_form {
   display: flex;
 
@@ -339,15 +370,18 @@ h1 {
     margin-bottom: 10%;
   }
 }
+
 form {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
   width: 60%;
+
   label {
     @extend %font-bold;
     margin-bottom: 5px;
   }
+
   input {
     @extend %font-bold;
     text-align: center;
@@ -381,7 +415,6 @@ form {
 
 .custom-loader {
   margin: 0 auto;
-
   width: 100px;
   height: 100px;
   display: grid;
@@ -417,7 +450,6 @@ form {
   }
 }
 
-
 .test_results {
   @extend %font-bold;
   background-color: white;
@@ -430,33 +462,30 @@ form {
   box-shadow: 0px 0px 25px 5px rgba(0, 0, 0, 0.14);
   border-radius: 2rem;
   overflow: hidden;
-
 }
+
 .form_page {
   @extend %font-bold;
-
   font-size: 24px;
 
   form {
     width: 700px;
-
     padding: 50px;
     background-color: #fff;
     border: 0.0625rem solid #dadce0;
     box-shadow: 0px 0px 25px 5px rgba(0, 0, 0, 0.14);
     border-radius: 2rem;
     overflow: hidden;
-
   }
 
   input {
     color: white;
     outline: none;
     margin-top: 15px;
-    width: 100% s;
+    width: 100%;
   }
 
   ::placeholder {
-    color: white
+    color: white;
   }
 }

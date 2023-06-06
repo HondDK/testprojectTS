@@ -21,7 +21,7 @@ const QOneAnswer: React.FC = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `http://165.232.118.51:8000/edu_exams/exams/exams/${uuid}`
+          `http://206.189.61.25:8000/edu_exams/exams/exams/${uuid}`
         );
         setData(response.data);
       } catch (error) {
@@ -45,7 +45,7 @@ const QOneAnswer: React.FC = () => {
     try {
       axios
         .post(
-          "http://165.232.118.51:8000/edu_exams/exams/ordinary_question_user_answers/",
+          "http://206.189.61.25:8000/edu_exams/exams/ordinary_question_user_answers/",
           article
         )
         .then((response) => dispatch(setAnswerId(response.data.id)));
