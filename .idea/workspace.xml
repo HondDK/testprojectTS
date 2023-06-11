@@ -7,7 +7,6 @@
     <list default="true" id="5f283494-9c5c-411b-995a-a7056744dec2" name="Changes" comment="add ts">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/testPage/QInputAnswer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/testPage/QInputAnswer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/testPage/QInputBetweenAnswer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/testPage/QInputBetweenAnswer.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/testPage/QOneAnswer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/testPage/QOneAnswer.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -89,7 +88,7 @@
       <workItem from="1686054694990" duration="3981000" />
       <workItem from="1686061508964" duration="2123000" />
       <workItem from="1686071439687" duration="1143000" />
-      <workItem from="1686480176321" duration="6296000" />
+      <workItem from="1686480176321" duration="7011000" />
     </task>
     <task id="LOCAL-00001" summary="add ts">
       <created>1685301374224</created>
@@ -168,7 +167,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686485592089</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="add ts">
+      <created>1686492701966</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1686492701966</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

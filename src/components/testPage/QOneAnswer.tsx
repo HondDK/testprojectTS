@@ -82,7 +82,9 @@ const QOneAnswer: React.FC = () => {
                         <section className="q_one_answer" key={question.uuid}>
                             <p>{question.header}</p>
                             <p className="QOneAnswerDescription">{question.description}</p>
-                            <img src={question.files && question.files[0] && url + question.files[0].file} alt="картинка" />
+                            {question.files && question.files.length > 0 && (
+                              <img src={url + question.files[0].file} alt="картинка" />
+                            )}
 
 
                             <div className="q_one_answer_btn">

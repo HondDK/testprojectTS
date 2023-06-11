@@ -52,7 +52,10 @@ const QInputAnswer: React.FC = () => {
           <section className="q_input_answer" key={item.uuid}>
             <p>{item.header}</p>
             <span className="description">{item.description}</span>
-            <img src={item.files && item.files[0] && url + item.files[0].file} alt="картинка" />
+            {item.files && item.files[0] && (
+              <img src={url + item.files[0].file} alt="картинка" />
+            )}
+
 
             <div className="q_input_answer_block">
               <input
