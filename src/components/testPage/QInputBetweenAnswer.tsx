@@ -21,11 +21,11 @@ const QInputBetweenAnswer: React.FC = () => {
   const { data } = useFetchData(
     `http://206.189.61.25:8000/edu_exams/exams/exams/${uuid}`
   );
-
+  const url = "http://206.189.61.25:8000/edu_exams/"
   function submit(index: number, question: any) {
     const article = {
       student_exam: student_examId,
-      question: question.uuid,
+      item: question.uuid,
       text: answer[index] || "",
     };
     axios
@@ -52,6 +52,7 @@ const QInputBetweenAnswer: React.FC = () => {
           <section className="q_input_answer">
             <p>{item.header}</p>
             <span className="description">{item.description}</span>
+            <img src={url + item.files[0].file} alt="картинка"/>
             <div className="q_between_input_answer_block">
               {item.items.map((items) => (
                 <>
@@ -67,7 +68,7 @@ const QInputBetweenAnswer: React.FC = () => {
                   <span className="text">{items.text_end}</span>
                   <button
                     disabled={buttonDisabled[index]}
-                    onClick={() => submit(index, item)}
+                    onClick={() => submit(index, items)}
                   >
                     Готово
                   </button>

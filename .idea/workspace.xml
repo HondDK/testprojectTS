@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5f283494-9c5c-411b-995a-a7056744dec2" name="Changes" comment="add ts" />
+    <list default="true" id="5f283494-9c5c-411b-995a-a7056744dec2" name="Changes" comment="add ts">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/testPage/QInputBetweenAnswer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/testPage/QInputBetweenAnswer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/IExam.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/IExam.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/ResultsTest.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ResultsTest.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/reducers/FormPageSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/reducers/FormPageSlice.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/types.ts" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -25,24 +32,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;docker-host&quot;,
-    &quot;js.last.introduce.type&quot;: &quot;CONST&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Danil/Documents/prog/testprojectObjTS/testprojts/public&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;C:\\Users\\Danil\\Documents\\prog\\testprojectObjTS\\testprojts\\node_modules\\prettier&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.prettier&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\Danil\\Documents\\prog\\testprojectObjTS\\testprojts\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "docker-host",
+    "js.last.introduce.type": "CONST",
+    "last_opened_file_path": "C:/Users/Danil/Documents/prog/testprojectObjTS/testprojts/public",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "prettierjs.PrettierConfiguration.Package": "C:\\Users\\Danil\\Documents\\prog\\testprojectObjTS\\testprojts\\node_modules\\prettier",
+    "settings.editor.selected.configurable": "settings.javascript.prettier",
+    "ts.external.directory.path": "C:\\Users\\Danil\\Documents\\prog\\testprojectObjTS\\testprojts\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="ReactDesignerToolWindowState">
     <option name="myId2Visible">
       <map>
@@ -83,7 +90,8 @@
       <workItem from="1686051081009" duration="1077000" />
       <workItem from="1686054694990" duration="3981000" />
       <workItem from="1686061508964" duration="2123000" />
-      <workItem from="1686071439687" duration="1021000" />
+      <workItem from="1686071439687" duration="1143000" />
+      <workItem from="1686480176321" duration="1930000" />
     </task>
     <task id="LOCAL-00001" summary="add ts">
       <created>1685301374224</created>

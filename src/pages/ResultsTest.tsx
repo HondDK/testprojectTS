@@ -7,7 +7,7 @@ import { IExam } from "../models/IExam";
 const ResultsTest = () => {
   const { student_examId, user } = useAppSelector((state) => state.formPage);
   const { ex_name } = useAppSelector((state) => state.testPage);
-
+  const { secondsToPass, minutesToPass, hoursToPass} = useAppSelector((state) => state.timer);
   const { data, isLoading, error } = useFetchData(
     `http://206.189.61.25:8000/edu_exams/exams/student_exams/${student_examId}/results`
   );
@@ -23,8 +23,8 @@ const ResultsTest = () => {
             <p>Набранные баллы: {data.points}</p>
             <p>Максимально возможное количество баллов: {data.max_points}</p>
             <p>
-              Остаток времени: {data.hours_pass}:{data.minutes_pass}:
-              {data.seconds_pass}
+              Остаток времени: {hoursToPass}:{minutesToPass}:
+              {secondsToPass}
             </p>
           </div>
         )}

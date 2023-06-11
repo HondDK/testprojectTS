@@ -2,6 +2,7 @@ export interface IExam {
   id: number;
   uuid: string;
   name: string;
+  files: { file: string }[];
   subject: string;
   school: string;
   points: number;

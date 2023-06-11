@@ -31,6 +31,7 @@ export interface IQInputAnswerState {
 export interface IQInputBetweenAnswerState extends IQInputAnswerState {}
 
 export interface RootState {
+
   formPage: IFormPageState;
   testPage: ITestPageState;
   timer: ITimerState;

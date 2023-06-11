@@ -10,6 +10,7 @@ const initialState: IFormPageState = {
     middleName: "",
   },
   isDisabled: false,
+
 };
 
 const formPageSlice = createSlice({
