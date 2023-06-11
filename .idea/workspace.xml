@@ -6,11 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="5f283494-9c5c-411b-995a-a7056744dec2" name="Changes" comment="add ts">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/testPage/QInputAnswer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/testPage/QInputAnswer.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/testPage/QInputBetweenAnswer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/testPage/QInputBetweenAnswer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/IExam.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/IExam.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ResultsTest.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ResultsTest.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/reducers/FormPageSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/reducers/FormPageSlice.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/testPage/QOneAnswer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/testPage/QOneAnswer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/FormPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/FormPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/style/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/style.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +91,7 @@
       <workItem from="1686054694990" duration="3981000" />
       <workItem from="1686061508964" duration="2123000" />
       <workItem from="1686071439687" duration="1143000" />
-      <workItem from="1686480176321" duration="1930000" />
+      <workItem from="1686480176321" duration="4823000" />
     </task>
     <task id="LOCAL-00001" summary="add ts">
       <created>1685301374224</created>
@@ -156,7 +156,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686059218909</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="add ts">
+      <created>1686482215977</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1686482215977</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

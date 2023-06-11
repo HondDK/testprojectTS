@@ -44,7 +44,7 @@ const QInputAnswer: React.FC = () => {
       });
     console.log(article);
   }
-
+  const url = "http://206.189.61.25:8000/edu_exams/"
   return (
     <>
       {data &&
@@ -52,6 +52,7 @@ const QInputAnswer: React.FC = () => {
           <section className="q_input_answer" key={item.uuid}>
             <p>{item.header}</p>
             <span className="description">{item.description}</span>
+            <img src={url + item.files[0].file} alt="картинка"/>
             <div className="q_input_answer_block">
               <input
                 onChange={(e) =>

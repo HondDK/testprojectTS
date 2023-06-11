@@ -70,6 +70,8 @@ const QOneAnswer: React.FC = () => {
         }
     }, [data]);
 
+    const url = "http://206.189.61.25:8000/edu_exams/"
+
     return (
         <>
             {data &&
@@ -80,13 +82,7 @@ const QOneAnswer: React.FC = () => {
                         <section className="q_one_answer" key={question.uuid}>
                             <p>{question.header}</p>
                             <p className="QOneAnswerDescription">{question.description}</p>
-                            {question.files.map((file: any) => (
-                                <img
-                                    src={"http://165.232.118.51:8000/edu_exams/" + file.file}
-                                    alt=""
-                                    key={file.uuid}
-                                />
-                            ))}
+                            <img src={url + question.files[0].file} alt="картинка"/>
                             <div className="q_one_answer_btn">
                                 {shuffledAnswers[index] &&
                                     shuffledAnswers[index].map((answer: any) => (

@@ -91,7 +91,7 @@ main {
   padding-top: 20px;
  .main_card_test{
    margin: 0 auto;
-   width: 50%;
+   width: 80%;
     div{
       @extend %font-base;
       font-size: 20px;
@@ -142,7 +142,9 @@ main {
     margin-top: 20px;
     box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.3),
     0 2px 6px 2px rgba(60, 64, 67, 0.15);
-
+    img{
+      width: 50%;
+    }
     p {
       @extend %font-base;
       font-weight: 400;
@@ -271,6 +273,8 @@ main {
 
 
 .q_input_answer {
+  display: flex;
+  flex-direction: column;
   background-color: #fff;
   border: 0.0625rem solid #dadce0;
   border-radius: 0.5rem;
@@ -280,6 +284,9 @@ main {
   box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.3),
   0 2px 6px 2px rgba(60, 64, 67, 0.15);
   @extend %font-bold;
+  img{
+    width: 50%;
+  }
 
   .q_between_input_answer_block {
     @extend %font-base;
@@ -493,6 +500,17 @@ form {
     box-shadow: 0px 0px 25px 5px rgba(0, 0, 0, 0.14);
     border-radius: 2rem;
     overflow: hidden;
+
+    @media (max-width: 768px) {
+      width: 90%;
+      padding: 30px;
+      border-radius: 1rem;
+    }
+
+    @media (max-width: 480px) {
+      padding: 20px;
+      border-radius: 0.5rem;
+    }
   }
 
   input {
@@ -500,9 +518,14 @@ form {
     outline: none;
     margin-top: 15px;
     width: 100%;
+
+    @media (max-width: 768px) {
+      margin-top: 10px;
+    }
   }
 
   ::placeholder {
     color: white;
   }
 }
+

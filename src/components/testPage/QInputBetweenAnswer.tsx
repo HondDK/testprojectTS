@@ -21,7 +21,7 @@ const QInputBetweenAnswer: React.FC = () => {
   const { data } = useFetchData(
     `http://206.189.61.25:8000/edu_exams/exams/exams/${uuid}`
   );
-  const url = "http://206.189.61.25:8000/edu_exams/"
+
   function submit(index: number, question: any) {
     const article = {
       student_exam: student_examId,
@@ -44,7 +44,7 @@ const QInputBetweenAnswer: React.FC = () => {
       });
     console.log(article);
   }
-
+  const url = "http://206.189.61.25:8000/edu_exams/"
   return (
     <>
       {data &&

@@ -11,12 +11,7 @@ import {
 const FormPage: React.FC = () => {
   const { uuid } = useParams<{ uuid: string }>(); // retrieve the UUID from the URL
   const dispatch = useAppDispatch();
-
   const { user, isDisabled } = useAppSelector((state) => state.formPage);
-
-  useEffect(() => {
-    localStorage.clear();
-  }, []);
 
   function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
     const { name, value } = e.target;
@@ -42,7 +37,16 @@ const FormPage: React.FC = () => {
     console.log(user);
   }
 
+  useEffect(() => {
+    localStorage.clear();
+  }, []);
+
   function startTest() {
+    if (isDisabled) {
+      alert("Введите данные");
+      return;
+    }
+
     const article = {
       user_name: `${user.lastName} ${user.firstName} ${user.middleName}`,
       exam: uuid,
@@ -98,7 +102,7 @@ const FormPage: React.FC = () => {
               <button
                 className="submit"
                 onClick={startTest}
-                disabled={isDisabled}
+                disabled={isDisabled || user.lastName.trim() === "" || user.firstName.trim() === "" || user.middleName.trim() === ""}
               >
                 {isDisabled ? "Введите данные" : "Начать тестирование"}
               </button>
